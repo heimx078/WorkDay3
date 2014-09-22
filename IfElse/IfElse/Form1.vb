@@ -11,8 +11,11 @@ Public Class Form1
         Dim st1 As String = txtFirstNum.Text
         Dim st2 As String = txtSecondNum.Text
 
-        num1 = CDbl(st1)
-        num2 = CDbl(st2)
+        If IsNumeric(st1) And IsNumeric(st2) Then
+            num1 = CDbl(st1)
+            num2 = CDbl(st2)
+            Return
+
 
         Dim result As String
 
@@ -24,7 +27,12 @@ Public Class Form1
             result = "They are equal"
         End If
 
-        txtResult.Text = result
+            txtResult.Text = result
+        Else
+            MessageBox.Show("Please type the numbers")
+        End If
+
+
     End Sub
 
 End Class
